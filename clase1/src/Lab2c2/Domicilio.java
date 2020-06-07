@@ -1,4 +1,4 @@
-package Lab2;
+package Lab2c2;
 
 public class Domicilio {
 	
