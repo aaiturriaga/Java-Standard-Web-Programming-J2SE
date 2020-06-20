@@ -57,5 +57,10 @@ public class Producto {
 		return "Producto [id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + ", codigo=" + codigo
 				+ "]";
 	}
+
+	public void setTipoProducto(Long tipoProducto) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
