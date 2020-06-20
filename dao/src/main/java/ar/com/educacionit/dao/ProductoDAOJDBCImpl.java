@@ -35,8 +35,10 @@ public class ProductoDAOJDBCImpl implements ProductoDAO {
 				String descripcion = rs.getString(2);
 				Float precio = rs.getFloat(3);
 				String codigo =  rs.getString(4);
+				Long tipoProducto = rs.getLong(5);//tipo_producto
 				
 				producto = new Producto(id, descripcion, precio, codigo);
+				producto.setTipoProducto(tipoProducto);
 				productos.add(producto);
 			}
 			conection.close();
@@ -99,7 +101,7 @@ public class ProductoDAOJDBCImpl implements ProductoDAO {
 			
 			st = connection.createStatement();
 			
-			st.executeUpdate("INSERT INTO producto (DESCRIPCION, PRECIO, CODIGO) VALUES('"+producto.getDescripcion()+"', "+producto.getPrecio()+", "+producto.getCodigo()+")", Statement.RETURN_GENERATED_KEYS);
+			st.executeUpdate("INSERT INTO producto (DESRIPCION, PRECIO, CODIGO) VALUES('"+producto.getDescripcion()+"', "+producto.getPrecio()+", "+producto.getCodigo()+")", Statement.RETURN_GENERATED_KEYS);
 			
 			ResultSet rs=st.getGeneratedKeys();
 			
@@ -145,7 +147,7 @@ public class ProductoDAOJDBCImpl implements ProductoDAO {
 			
 			st = connection.createStatement();
 			
-			int rows = st.executeUpdate("UPDATE producto SET precio="+producto.getPrecio()+" , descripcion='"+producto.getDescripcion()+"'  WHERE id="+producto.getId()+"" );
+			int rows = st.executeUpdate("UPDATE producto SET precio="+producto.getPrecio()+" , desripcion='"+producto.getDescripcion()+"'  WHERE id="+producto.getId()+"" );
 			
 			connection.commit();
 			
