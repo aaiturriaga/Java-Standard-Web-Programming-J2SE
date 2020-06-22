@@ -15,10 +15,11 @@ public class Producto implements Comparable<Producto> {
 		this.codigo = codigo;
 	}
 
-	public Producto(String descripcion, Float precio, String codigo) {
+	public Producto(String descripcion, Float precio, String codigo, Long tipo) {
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.codigo = codigo;
+		this.tipoProducto = tipo;
 	}
 
 	public Long getId() {
@@ -53,24 +54,23 @@ public class Producto implements Comparable<Producto> {
 		this.codigo = codigo;
 	}
 
-	@Override
-	public String toString() {
-		return "Producto [id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + ", codigo=" + codigo
-				+ "]";
-	}
-
-	@Override
-	public int compareTo(Producto p) {
-		return this.getPrecio().compareTo(p.getPrecio());
-	}
-
 	public Long getTipoProducto() {
 		return tipoProducto;
 	}
 
 	public void setTipoProducto(Long tipoProducto) {
 		this.tipoProducto = tipoProducto;
+	}	
+	
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + ", codigo=" + codigo
+				+ ", tipoProducto=" + tipoProducto + "]";
 	}
 	
-	
+	@Override
+	public int compareTo(Producto p) {
+		return this.getPrecio().compareTo(p.getPrecio());
+	}
+
 }

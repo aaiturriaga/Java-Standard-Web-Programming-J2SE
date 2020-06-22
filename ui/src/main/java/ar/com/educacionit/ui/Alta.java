@@ -21,7 +21,7 @@ public class Alta extends EjecutableBase implements Ejecutable {
 		Float precio = teclado.nextFloat();
 		
 		//creo nuevo producto, solo acá!!! no existe en db
-		Producto nuevoProducto = new Producto(descripcion, precio, codigo);
+		Producto nuevoProducto = new Producto(descripcion, precio, codigo, null);
 		
 		try {
 			ps.nuevoProducto(nuevoProducto);

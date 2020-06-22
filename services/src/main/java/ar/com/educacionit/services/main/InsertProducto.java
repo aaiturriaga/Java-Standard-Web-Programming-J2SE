@@ -11,7 +11,7 @@ public class InsertProducto {
 		
 		ProductoServices service = new ProductoServicesImpl();
 
-		Producto p = new Producto("Termo de Acero", 10500f,"TERM876");
+		Producto p = new Producto("Auriculares", 1050f,"COMP876", 16L);
 		
 		try {
 			//ctrl + T

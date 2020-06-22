@@ -34,7 +34,7 @@ public class EncoladorProductosMain {
 			String descripcion = teclado.next();
 			
 			//creo nuevo producto, solo acá!!! no existe en db
-			Producto nuevoProducto = new Producto(descripcion, precio, codigo);
+			Producto nuevoProducto = new Producto(descripcion, precio, codigo, null);
 			colaDeProductos.offer(nuevoProducto);
 		}
 		

@@ -22,6 +22,6 @@ public class DeleteMain {
 			service.eliminarProducto(p.getId());
 		}
 		
-		// service.eliminarProducto(1L);
+		//service.eliminarProducto(8L);
 	}
 }
