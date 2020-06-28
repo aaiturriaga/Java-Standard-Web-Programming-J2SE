@@ -33,8 +33,8 @@ public class NuevoProductoServlet extends HttpServlet {
 		String tipoProducto = req.getParameter("tipoProducto");		
 		
 		//creo nuevo producto, solo acá!!! no existe en db
-		Producto nuevoProducto = new Producto(descripcion, Float.parseFloat(precio), codigo, null);
-		nuevoProducto.setTipoProducto(Long.parseLong(tipoProducto));
+		Producto nuevoProducto = new Producto(descripcion, Float.parseFloat(precio), codigo, Long.parseLong(tipoProducto));
+		//nuevoProducto.setTipoProducto(Long.parseLong(tipoProducto));
 		
 		ProductoServices ps = new ProductoServicesImpl();
 
